@@ -1,4 +1,17 @@
-'''Process binary log and replicate changes'''
+'''
+   Process binary log and replicate changes. You will need to have a
+   database called "repl" on the receiving database to track the position
+   from the sending binary log. Here are required command line options:
+
+   -l - the local log directory location, must be readable
+   -f - the local database name. used to filter statements from the logs
+   -u - the receiving connection username 
+   -p - the receiving connection password. should be BASE64 encoded 
+        (for minimal security)
+   -h - the receiving hostname
+   -d - the receiving database name
+
+'''
 
 from __future__ import with_statement
 from os import path
