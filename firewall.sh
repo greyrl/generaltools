@@ -23,7 +23,7 @@ echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
 for net in $SAFE_NETWORKS; do
     $CMD -t filter -A INPUT -p tcp -m tcp -s $net -d $LOCAL_IP --dport 22 -j ACCEPT
 done
-if [ -n "$PARTNER_IP" ];then
+if [ -n "$PARTNER_IP" ]; then
     $CMD -t filter -A INPUT -p tcp -m tcp -s $PARTNER_IP -d $LOCAL_IP --dport 22 -j ACCEPT
 fi
 
