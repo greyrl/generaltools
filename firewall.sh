@@ -7,6 +7,8 @@ LOCAL_IP=`/sbin/ip addr show $INTERFACE | grep "inet " | awk '{print $2}' | sed 
 PARTNER_IP=`resolveip -s partner 2>/dev/null`
 SAFE_NETWORKS="<add your networks here>"
 
+cd `dirname $0`
+
 # create virtual interface
 if [ -z "`ip addr show $INTERFACE:1 | grep 192.168`" ]; then
     /sbin/ifconfig $INTERFACE:1 $INTERNAL_IP netmask 255.255.255.0
@@ -17,7 +19,7 @@ echo 1 > /proc/sys/net/ipv4/ip_dynaddr
 echo 1 > /proc/sys/net/ipv4/ip_forward
 echo 1 > /proc/sys/net/ipv4/tcp_syncookies
 echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
-/sbin/iptables-restore < /chi/cloud/firewall/live.rules
+/sbin/iptables-restore < firewall.rules
 
 # GLOBAL RULES
 for net in $SAFE_NETWORKS; do
