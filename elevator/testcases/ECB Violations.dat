@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="" />
-<title>ECb Violations</title>
+<link rel="selenium.base" href="http://a810-bisweb.nyc.gov/" />
+<title>ECB Violations</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">ECb Violations</td></tr>
+<tr><td rowspan="1" colspan="3">ECB Violations</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -28,7 +28,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=4075221</td>
+	<td>link=regexp:[0-9]{7}</td>
 	<td></td>
 </tr>
 <tr>
